@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "ToDoListAppApi\WebApi.csproj", "{189E1EAE-8AF6-48A1-994A-F7947B3D7985}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "ToDoListAppApi\WebApi.csproj", "{189E1EAE-8AF6-48A1-994A-F7947B3D7985}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{CB24181B-E1FD-4192-96B0-D50D6EA5B182}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{CB24181B-E1FD-4192-96B0-D50D6EA5B182}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{383CA6E1-FF50-48AA-A0B1-EE1F34019A6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{383CA6E1-FF50-48AA-A0B1-EE1F34019A6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{1084F07C-C7F1-4E4E-ADE9-0E5095619FE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{383CA6E1-FF50-48AA-A0B1-EE1F34019A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{383CA6E1-FF50-48AA-A0B1-EE1F34019A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{383CA6E1-FF50-48AA-A0B1-EE1F34019A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1084F07C-C7F1-4E4E-ADE9-0E5095619FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1084F07C-C7F1-4E4E-ADE9-0E5095619FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1084F07C-C7F1-4E4E-ADE9-0E5095619FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1084F07C-C7F1-4E4E-ADE9-0E5095619FE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
