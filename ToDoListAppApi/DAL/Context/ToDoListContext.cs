@@ -1,4 +1,4 @@
-﻿using DAL.Domain;
+﻿using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace DAL.Context
         {
             Database.EnsureCreated();
         }
-
+        
         public ToDoListContext(DbContextOptions<ToDoListContext> options)
          : base(options)
         {
