@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Domain
+namespace DAL.Entities
 {
     public class Assignment : BaseEntity
     {

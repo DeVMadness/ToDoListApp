@@ -1,42 +1,46 @@
 ﻿using DAL.Context;
-using DAL.Domain;
+using System.Net;
 using System.Net.Http.Headers;
+using AutoMapper;
+using Domain.Models;
+using DAL.MappingProfiles;
+using DAL.Repositories.Abstraction;
+using DAL.Repositories.Implementation;
 
 namespace Test
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            var config = new MapperConfiguration(cfg => {
+                cfg.AddProfile<DomainToEntityMappingProfile>();
+                cfg.AddProfile<EntityToDomainMappingProfile>();
+            });
+            IMapper mapper = config.CreateMapper();
+
             var context = new ToDoListContext();
 
+            var ass = context.Assignments.ToList();
 
-            var assignment1 = new Assignment 
-            { 
-                Title = "Created CRUD opperation" , 
-                CreatedAt = DateTime.Now, 
-                Description = "Taras loh",
-                StatusId = context.Statuses.First(s=>s.Name == "Not Started").Id
-            };
 
-            var assignment2 = new Assignment
+
+            var assign1 = new Assignment
             {
-                Title = "Build ToDo App",
-                Description = "Create a simple ToDo application using EF Core.",
-                StatusId = context.Statuses.First(s => s.Name == "In Progress").Id,
-                CreatedAt = DateTime.UtcNow
+                Title = "Pitu Spatu",
+                Description = "First Priority",
+                StatusId = 3,
+                CreatedAt = DateTime.Now,
             };
 
-            var assignment3 = new Assignment
-            {
-                Title = "Test ToDo App",
-                Description = "Test the ToDo application for bugs.",
-                StatusId = context.Statuses.First(s => s.Name == "Completed").Id,
-                CreatedAt = DateTime.UtcNow
-            };
+            IAssignmentRepository assignment = new AssignmentRepository(context, mapper);
 
-            context.Assignments.AddRange(assignment1, assignment2, assignment3);
-            context.SaveChanges();
+
+            assignment.CreateAssignmentAsync(assign1);
+
+
+
+            Console.ReadLine();
 
         }
     }
