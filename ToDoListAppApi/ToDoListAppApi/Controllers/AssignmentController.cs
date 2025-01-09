@@ -62,16 +62,11 @@ namespace WebApi.Controllers
             return CreatedAtAction(nameof(GetAssignmentById), new { id = assignmentResponse.Id }, assignmentResponse);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<AssignmentResponse>> UpdateAssignment(int id, [FromBody] AssignmentRequest assignmentRequest)
-        {
-            //if (id != assignmentRequest.Id)
-            //{
-            //    return BadRequest("ID in the URL does not match ID in the request body.");
-            //}
-
-            var assignment = mapper.Map<Assignment>(assignmentRequest);
-            var updatedAssignment = await assignmentService.UpdateAssignmentAsync(id, assignment);
+        [HttpPut]
+        public async Task<ActionResult<AssignmentResponse>> UpdateAssignment([FromBody] AssignmentUpdateRequest assignmentUpdateRequest)
+        { 
+            var assignment = mapper.Map<Assignment>(assignmentUpdateRequest);
+            var updatedAssignment = await assignmentService.UpdateAssignmentAsync(assignmentUpdateRequest.Id, assignment);
             var assignmentResponse = mapper.Map<AssignmentResponse>(updatedAssignment);
 
             return Ok(assignmentResponse);

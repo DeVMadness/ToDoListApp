@@ -11,6 +11,7 @@ namespace WebApi.MappingProfile
             CreateMap<Domain.Models.Status, Models.StatusResponse>();
             CreateMap<Models.AssignmentRequest, Domain.Models.Assignment>();
             CreateMap<Models.StatusRequest, Domain.Models.Status>();
+            CreateMap<Models.AssignmentUpdateRequest, Domain.Models.Assignment>();
         }
     }
 }
