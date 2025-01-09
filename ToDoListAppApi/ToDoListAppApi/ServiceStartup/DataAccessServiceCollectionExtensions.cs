@@ -18,7 +18,7 @@ namespace WebApi.ServiceStartup
             });
 
             services.AddScoped<IAssignmentRepository, AssignmentRepository>();
-            //services.AddScoped<IStatusRepository, StatusRepository>();
+            services.AddScoped<IStatusRepository, StatusRepository>();
 
             return services;
         }

@@ -21,22 +21,17 @@ namespace Test
 
             var context = new ToDoListContext();
 
-            var ass = context.Assignments.ToList();
+            
 
 
 
-            var assign1 = new Assignment
-            {
-                Title = "Pitu Spatu",
-                Description = "First Priority",
-                StatusId = 3,
-                CreatedAt = DateTime.Now,
-            };
+      
 
             IAssignmentRepository assignment = new AssignmentRepository(context, mapper);
 
 
-            assignment.CreateAssignmentAsync(assign1);
+
+            var asssss = assignment.GetAssignmentsByStatusAsync(1);
 
 
 
